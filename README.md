@@ -23,7 +23,6 @@ gift-for-someone/
 ├── photo4.jpg
 ├── voice-note.mp3
 ├── song.mp3
-├── song2.mp3
 └── README.md
 ```
 
@@ -34,7 +33,6 @@ gift-for-someone/
 The page has two song players:
 
 - **A little song** → `song.mp3`
-- **Another song** → `song2.mp3`
 
 Put both files next to the HTML file. The second player is already configured to use `song2.mp3`.
 
