@@ -1,4 +1,4 @@
-# Gift for Faiza 💕
+# Gift for Someone 💕
 
 A small interactive birthday gift webpage made with HTML, CSS, and JavaScript.
 
