@@ -17,6 +17,7 @@ A small interactive birthday gift webpage made with HTML, CSS, and JavaScript.
 ```text
 gift-for-someone/
 ├── gift-for-someone.html
+├── gift-for-someone2.html
 ├── photo1.jpg
 ├── photo2.jpg
 ├── photo3.jpg
