@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Faiza</title>
+  <title>Happy Birthday someone</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap"
@@ -318,7 +318,7 @@
     .hero h1 {
       font-size: clamp(30px, 6vw, 52px);
       margin: 14px 0 6px;
-      color: var(--parchment);
+      color: var(--gold-soft);
     }
 
     .hero h1 em {
@@ -334,7 +334,7 @@
       font-size: 11px;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: rgba(244, 234, 217, 0.55);
+      color: rgba(0, 0, 0, 0.55);
       animation: bob 2.2s ease-in-out infinite;
     }
 
@@ -428,9 +428,8 @@
       width: 100%;
       aspect-ratio: 1/1;
       border-radius: 1px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: block;
+      object-fit: cover;
       color: rgba(255, 255, 255, 0.85);
     }
 
@@ -576,7 +575,7 @@
         <circle cx="24" cy="27" r="2.2" fill="currentColor" />
       </svg>
       <p class="eyebrow">A GIFT —</p>
-      <p class="from-for">From <em>Adem</em><br>For <em>Faiza</em></p>
+      <p class="from-for">From <em>Adem</em><br>For <em>Someone Special</em></p>
       <p class="hint-line">a little secret, before you open it...</p>
       <div class="dots" id="dots">
         <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
@@ -599,14 +598,14 @@
 
     <section class="hero">
       <p class="eyebrow">— A GIFT —</p>
-      <h1>From Maya<br><em>For Faiza</em></h1>
+      <h1>From Adem<br><em>For Someone Special</em></h1>
       <p class="scroll-cue">scroll to open ↓</p>
     </section>
 
     <section>
       <p class="eyebrow kicker">A FEW WORDS</p>
       <div class="letter">
-        <p>Faiza,</p>
+        <p>Someone Special,</p>
         <p>This isn't just a collection of photos. It's a little piece of my heart, made for you. I wanted to create
           something you could come back to whenever you missed us. Happy almost-birthday, my love. Thank you for being
           the person who makes ordinary days unforgettable and for giving my heart a place to belong.</p>
@@ -620,20 +619,28 @@
       <h2 class="section-title">Memories</h2>
       <p class="section-sub">a handful, out of many</p>
       <div class="polaroid-field">
+        <!-- PHOTO 1: change the src below to your own image filename -->
         <div class="polaroid" style="--r:-6deg;">
-          <div class="photo" style="background:linear-gradient(150deg,#e7a06b,#c96b5a);">☕</div>
+          <img class="photo" src="photo1.jpg" alt="first coffee, march"
+            style="background:linear-gradient(150deg,#e7a06b,#c96b5a);">
           <p class="cap">first coffee, march</p>
         </div>
+        <!-- PHOTO 2: change the src below to your own image filename -->
         <div class="polaroid" style="--r:4deg;">
-          <div class="photo" style="background:linear-gradient(150deg,#7f9bb0,#4c6a80);">🌊</div>
+          <img class="photo" src="photo2.jpg" alt="the beach we froze at"
+            style="background:linear-gradient(150deg,#7f9bb0,#4c6a80);">
           <p class="cap">the beach we froze at</p>
         </div>
+        <!-- PHOTO 3: change the src below to your own image filename -->
         <div class="polaroid" style="--r:-3deg;">
-          <div class="photo" style="background:linear-gradient(150deg,#c69a4e,#8f6f34);">🎶</div>
+          <img class="photo" src="photo3.jpg" alt="that terrible karaoke"
+            style="background:linear-gradient(150deg,#c69a4e,#8f6f34);">
           <p class="cap">that terrible karaoke</p>
         </div>
+        <!-- PHOTO 4: change the src below to your own image filename -->
         <div class="polaroid" style="--r:7deg;">
-          <div class="photo" style="background:linear-gradient(150deg,#a2846f,#6b5142);">🏕️</div>
+          <img class="photo" src="photo4.jpg" alt="the tent that leaked"
+            style="background:linear-gradient(150deg,#a2846f,#6b5142);">
           <p class="cap">the tent that leaked</p>
         </div>
       </div>
@@ -643,6 +650,8 @@
       <h2 class="section-title">A little extra</h2>
       <p class="section-sub">tap to listen</p>
       <div class="extras">
+        <!-- VOICE NOTE: change the src below to your own recording filename -->
+        <audio id="voice-audio" src="voice-note.mp3" preload="metadata"></audio>
         <div class="card">
           <button class="round-btn" id="voice-btn" aria-label="Play voice note">
             <svg id="voice-icon" width="16" height="16" viewBox="0 0 16 16" fill="white">
@@ -657,6 +666,8 @@
           <div class="timer" id="voice-timer">0:07</div>
         </div>
 
+        <!-- MUSIC: change the src below to your own song filename -->
+        <audio id="bg-music" src="song.mp3" preload="metadata" loop></audio>
         <div class="card">
           <button class="round-btn" id="music-btn" aria-label="Play a little song" style="background:var(--gold);">
             <svg id="music-icon" width="16" height="16" viewBox="0 0 16 16" fill="white">
@@ -781,91 +792,70 @@
       }, 160);
     }
 
-    // ---------- voice note (decorative playback) ----------
+    // ---------- voice note (plays voice-note.mp3) ----------
     const voiceBtn = document.getElementById('voice-btn');
     const voiceIcon = document.getElementById('voice-icon');
     const voiceWave = document.getElementById('wave');
     const voiceTimer = document.getElementById('voice-timer');
-    let voicePlaying = false, voiceInterval = null, voiceSeconds = 7;
+    const voiceAudio = document.getElementById('voice-audio');
+    const PLAY_ICON = '<path d="M4 2v12l10-6z"/>';
+    const PAUSE_ICON = '<rect x="3" y="2" width="3.4" height="12" fill="white"/><rect x="9.6" y="2" width="3.4" height="12" fill="white"/>';
+
+    function formatTime(sec) {
+      if (!isFinite(sec)) return '0:00';
+      const m = Math.floor(sec / 60), s = Math.floor(sec % 60);
+      return m + ':' + String(s).padStart(2, '0');
+    }
+    voiceAudio.addEventListener('loadedmetadata', () => voiceTimer.textContent = formatTime(voiceAudio.duration));
+    voiceAudio.addEventListener('timeupdate', () => voiceTimer.textContent = formatTime(voiceAudio.duration - voiceAudio.currentTime));
+    voiceAudio.addEventListener('ended', () => {
+      voiceIcon.innerHTML = PLAY_ICON;
+      voiceWave.classList.remove('active');
+      clearInterval(waveTimer);
+      voiceTimer.textContent = formatTime(voiceAudio.duration);
+    });
+    voiceAudio.addEventListener('error', () => {
+      voiceTimer.textContent = 'add file';
+    });
 
     voiceBtn.addEventListener('click', () => {
-      voicePlaying = !voicePlaying;
-      voiceWave.classList.toggle('active', voicePlaying);
-      if (voicePlaying) {
-        voiceIcon.innerHTML = '<rect x="3" y="2" width="3.4" height="12" fill="white"/><rect x="9.6" y="2" width="3.4" height="12" fill="white"/>';
-        let remaining = voiceSeconds;
-        voiceInterval = setInterval(() => {
-          remaining -= 1;
-          voiceTimer.textContent = '0:0' + Math.max(remaining, 0);
-          if (remaining <= 0) {
-            clearInterval(voiceInterval);
-            voicePlaying = false;
-            voiceWave.classList.remove('active');
-            voiceIcon.innerHTML = '<path d="M4 2v12l10-6z"/>';
-            voiceTimer.textContent = '0:07';
-          }
-        }, 1000);
+      if (voiceAudio.paused) {
+        voiceAudio.play().catch(() => { voiceTimer.textContent = 'add file'; });
+        voiceIcon.innerHTML = PAUSE_ICON;
+        voiceWave.classList.add('active');
         if (waveTimer) clearInterval(waveTimer);
         waveTimer = animateWave('wave');
       } else {
-        clearInterval(voiceInterval);
+        voiceAudio.pause();
+        voiceIcon.innerHTML = PLAY_ICON;
+        voiceWave.classList.remove('active');
         clearInterval(waveTimer);
-        voiceIcon.innerHTML = '<path d="M4 2v12l10-6z"/>';
-        voiceTimer.textContent = '0:07';
       }
     });
 
-    // ---------- tiny original ambient tune via WebAudio ----------
-    let audioCtx = null;
-    let musicNodes = [];
-    let musicPlaying = false;
-    let musicWaveTimer = null;
-
-    function startMusic() {
-      audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
-      const notes = [261.63, 329.63, 392.00, 493.88]; // C E G B - soft chord, arpeggiated
-      const master = audioCtx.createGain();
-      master.gain.value = 0.05;
-      master.connect(audioCtx.destination);
-      musicNodes.push(master);
-
-      let step = 0;
-      const seq = setInterval(() => {
-        const osc = audioCtx.createOscillator();
-        const g = audioCtx.createGain();
-        osc.type = 'sine';
-        osc.frequency.value = notes[step % notes.length];
-        g.gain.value = 0;
-        osc.connect(g); g.connect(master);
-        osc.start();
-        const now = audioCtx.currentTime;
-        g.gain.linearRampToValueAtTime(0.9, now + 0.4);
-        g.gain.linearRampToValueAtTime(0, now + 1.6);
-        osc.stop(now + 1.7);
-        step++;
-      }, 900);
-      musicNodes.push({ stop: () => clearInterval(seq) });
-    }
-    function stopMusic() {
-      musicNodes.forEach(n => { if (n.stop) n.stop(); if (n.disconnect) n.disconnect(); });
-      musicNodes = [];
-    }
-
+    // ---------- background song (plays song.mp3) ----------
     const musicBtn = document.getElementById('music-btn');
     const musicIcon = document.getElementById('music-icon');
     const musicWave = document.getElementById('music-wave');
+    const bgMusic = document.getElementById('bg-music');
+    bgMusic.volume = 0.5;
+    let musicWaveTimer = null;
+
+    bgMusic.addEventListener('error', () => {
+      musicBtn.title = 'add song.mp3 to enable playback';
+    });
 
     musicBtn.addEventListener('click', () => {
-      musicPlaying = !musicPlaying;
-      musicWave.classList.toggle('active', musicPlaying);
-      if (musicPlaying) {
-        musicIcon.innerHTML = '<rect x="3" y="2" width="3.4" height="12" fill="white"/><rect x="9.6" y="2" width="3.4" height="12" fill="white"/>';
-        startMusic();
+      if (bgMusic.paused) {
+        bgMusic.play().catch(() => { });
+        musicIcon.innerHTML = PAUSE_ICON;
+        musicWave.classList.add('active');
         if (musicWaveTimer) clearInterval(musicWaveTimer);
         musicWaveTimer = animateWave('music-wave');
       } else {
-        musicIcon.innerHTML = '<path d="M4 2v12l10-6z"/>';
-        stopMusic();
+        bgMusic.pause();
+        musicIcon.innerHTML = PLAY_ICON;
+        musicWave.classList.remove('active');
         clearInterval(musicWaveTimer);
       }
     });
